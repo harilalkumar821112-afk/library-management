@@ -2,9 +2,9 @@
 // ISSUE / RETURN MANAGEMENT
 // ======================================
 
-const ISSUE_API = "http://localhost:5000/api/issues";
-const STUDENT_API = "http://localhost:5000/api/students";
-const BOOK_API = "http://localhost:5000/api/books";
+const ISSUE_API = "https://library-management-3nu4.onrender.com/api/issues";
+const STUDENT_API = "https://library-management-3nu4.onrender.com/api/students";
+const BOOK_API = "https://library-management-3nu4.onrender.com/api/books";
 
 const token = localStorage.getItem("libraryToken");
 

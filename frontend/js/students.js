@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/students";
+const API_URL = "https://library-management-3nu4.onrender.com/api/students";
 
 const token = localStorage.getItem("libraryToken");
 

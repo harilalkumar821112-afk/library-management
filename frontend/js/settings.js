@@ -2,7 +2,7 @@
 // ADMIN SETTINGS - CHANGE PASSWORD
 // ======================================
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://library-management-3nu4.onrender.com/api";
 
 
 // ===============================

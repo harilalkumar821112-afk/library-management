@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/api/auth/login";
+const API_URL = "https://library-management-3nu4.onrender.com/api/auth/login";
 
 document
     .getElementById("loginForm")
