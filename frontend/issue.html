@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Issue / Return - Library</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <button class="page-back-btn" onclick="goBack()">
+    ←
+</button>
+    <!-- ==============================
+         SIDEBAR
+    =============================== -->
+
+    <div class="sidebar">
+
+        <h2>📚 Library</h2>
+ <a href="settings.html">⚙️ Settings</a>
+ 
+        <a href="index.html">
+            🏠 Dashboard
+        </a>
+
+        <a href="books.html">
+            📚 Books
+        </a>
+
+        <a href="students.html">
+            👨‍🎓 Students
+        </a>
+
+        <a href="issue.html">
+            📖 Issue / Return
+        </a>
+
+
+        <button
+            type="button"
+            class="logout-btn"
+            onclick="logout()"
+        >
+            🚪 Logout
+        </button>
+
+    </div>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+
+    <div class="main">
+
+        <h1>
+            📖 Issue / Return Book
+        </h1>
+
+        <p class="welcome">
+            Issue books to students and manage returns
+        </p>
+
+
+        <!-- ==============================
+             ISSUE BOOK FORM
+        =============================== -->
+
+        <div class="form-container">
+
+            <h2>
+                📖 Issue Book
+            </h2>
+
+
+            <form id="issueForm">
+
+
+                <!-- STUDENT -->
+
+                <label for="studentSelect">
+                    👨‍🎓 Select Student
+                </label>
+
+                <select
+                    id="studentSelect"
+                    required
+                >
+
+                    <option value="">
+                        👨‍🎓 Select Student
+                    </option>
+
+                </select>
+
+
+                <!-- BOOK -->
+
+                <label for="bookSelect">
+                    📚 Select Book
+                </label>
+
+                <select
+                    id="bookSelect"
+                    required
+                >
+
+                    <option value="">
+                        📚 Select Book
+                    </option>
+
+                </select>
+
+
+                <!-- DUE DATE -->
+
+                <label for="dueDate">
+                    📅 Due Date
+                </label>
+
+                <input
+                    type="date"
+                    id="dueDate"
+                    required
+                >
+
+
+                <!-- ISSUE BUTTON -->
+
+                <button
+                    type="submit"
+                >
+                    📖 Issue Book
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- ==============================
+             ISSUE HISTORY
+        =============================== -->
+
+        <div class="table-container">
+
+
+            <div class="issue-history-header">
+
+                <h2>
+                    📋 Issue History
+                </h2>
+
+
+                <div class="search-container">
+
+                    <input
+                        type="text"
+                        id="issueSearch"
+                        placeholder="🔍 Search student or book..."
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Book
+                            </th>
+
+                            <th>
+                                Issue Date
+                            </th>
+
+                            <th>
+                                Due Date
+                            </th>
+
+                            <th>
+                                Return Date
+                            </th>
+
+                            <th>
+                                Fine
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="issuesTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==============================
+         JAVASCRIPT
+    =============================== -->
+
+    <script src="js/issue.js"></script>
+
+    <script src="js/auth.js"></script>
+
+
+</body>
+</html>

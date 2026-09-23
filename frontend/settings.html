@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Settings - Library Management</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <button class="page-back-btn" onclick="goBack()">
+    ←
+</button>
+
+    <div class="sidebar">
+
+        <h2>📚 Library</h2>
+
+        <a href="index.html">🏠 Dashboard</a>
+        <a href="books.html">📖 Books</a>
+        <a href="students.html">👨‍🎓 Students</a>
+        <a href="issue.html">📕 Issue / Return</a>
+        <a href="settings.html" class="active">⚙️ Settings</a>
+
+        <button onclick="logout()">🚪 Logout</button>
+
+    </div>
+
+
+    <div class="main-content">
+
+        <div class="page-header">
+            <h1>⚙️ Admin Settings</h1>
+
+            <div class="admin-info">
+                👤 <span id="adminUsername">Admin</span>
+            </div>
+        </div>
+
+
+        <div class="settings-container">
+
+            <div class="settings-card">
+
+                <h2>🔐 Change Password</h2>
+
+                <p class="settings-description">
+                    Update your admin account password securely.
+                </p>
+
+
+                <form id="changePasswordForm">
+
+                    <div class="form-group">
+
+                        <label for="currentPassword">
+                            Current Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="currentPassword"
+                            placeholder="Enter current password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="newPassword">
+                            New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            placeholder="Enter new password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="confirmPassword">
+                            Confirm New Password
+                        </label>
+
+                        <input
+                            type="password"
+                            id="confirmPassword"
+                            placeholder="Confirm new password"
+                            required
+                        >
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="change-password-btn"
+                    >
+                        🔑 Change Password
+                    </button>
+
+                </form>
+
+
+                <div id="message"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/auth.js"></script>
+    <script src="js/settings.js"></script>
+
+</body>
+
+</html>

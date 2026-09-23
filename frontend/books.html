@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Books - Library Management</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+    <button class="page-back-btn" onclick="goBack()">
+    ←
+</button>
+
+    <div class="sidebar">
+
+        <h2>📚 Library</h2>
+
+        <a href="settings.html">⚙️ Settings</a>
+
+        <a href="index.html">🏠 Dashboard</a>
+
+        <a href="books.html">📚 Books</a>
+
+        <a href="students.html">👨‍🎓 Students</a>
+
+        <a href="issue.html">📖 Issue / Return</a>
+
+        <button
+    type="button"
+    class="logout-btn"
+    onclick="logout()">
+    🚪 Logout
+       </button>
+
+    </div>
+
+
+    <div class="main">
+
+        <h1>📚 Books Management</h1>
+
+        <p class="welcome">
+            Add, update and delete library books
+        </p>
+
+
+        <div class="form-container">
+
+            <h2>Add New Book</h2>
+
+            <form id="bookForm">
+
+                <input
+                    type="text"
+                    id="title"
+                    placeholder="Book Title"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="author"
+                    placeholder="Author"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="category"
+                    placeholder="Category"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="isbn"
+                    placeholder="ISBN"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="quantity"
+                    placeholder="Quantity"
+                    min="1"
+                    required
+                >
+
+                <button type="submit">
+                    ➕ Add Book
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <div class="books-header">
+    <h2>All Books</h2>
+
+    <div class="search-container">
+        <input
+            type="text"
+            id="bookSearch"
+            placeholder="🔍 Search books..."
+        >
+    </div>
+</div>
+
+
+
+<div class="book-filters">
+
+    <select id="categoryFilter">
+        <option value="">📚 All Categories</option>
+    </select>
+
+    <select id="availabilityFilter">
+        <option value="">📊 All Status</option>
+        <option value="available">✅ Available</option>
+        <option value="issued">🔴 Fully Issued</option>
+    </select>
+
+</div>
+
+            
+
+            <table class="books-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>ISBN</th>
+                        <th>Quantity</th>
+                        <th>Available</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="booksTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/books.js"></script>
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

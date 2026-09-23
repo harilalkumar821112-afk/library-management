@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Students - Library Management</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+    <button class="page-back-btn" onclick="goBack()">
+    ←
+</button>
+
+    <div class="sidebar">
+
+        <h2>📚 Library</h2>
+        <a href="settings.html">⚙️ Settings</a>
+
+        <a href="index.html">🏠 Dashboard</a>
+
+        <a href="books.html">📚 Books</a>
+
+        <a href="students.html">👨‍🎓 Students</a>
+
+        <a href="issue.html">📖 Issue / Return</a>
+
+       <button
+    type="button"
+    class="logout-btn"
+    onclick="logout()">
+    🚪 Logout
+   </button>
+
+    </div>
+
+
+    <div class="main">
+
+        <h1>👨‍🎓 Student Management</h1>
+
+        <p class="welcome">
+            Add and manage library students
+        </p>
+
+
+        <div class="form-container">
+
+            <h2>Add Student</h2>
+
+            <form id="studentForm">
+
+                <input
+                    type="text"
+                    id="studentId"
+                    placeholder="Student ID"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Student Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="phone"
+                    placeholder="Phone Number"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="course"
+                    placeholder="Course"
+                    required
+                >
+
+                <input
+                    type="number"
+                    id="semester"
+                    placeholder="Semester"
+                    min="1"
+                    required
+                >
+
+                <button type="submit">
+                    ➕ Add Student
+                </button>
+
+            </form>
+
+        </div>
+
+
+       <div class="students-header">
+    <h2>All Students</h2>
+
+    <div class="search-container">
+        <input
+            type="text"
+            id="studentSearch"
+            placeholder="🔍 Search students..."
+        >
+    </div>
+</div>
+
+            <table class="students-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Course</th>
+                        <th>Semester</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="studentsTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/students.js"></script>
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+
+</html>

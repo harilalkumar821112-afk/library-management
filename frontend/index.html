@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard - Library Management</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ==============================
+         SIDEBAR
+    =============================== -->
+ <button class="mobile-menu-btn" id="mobileMenuBtn">
+    ☰
+</button>
+   <div class="sidebar" id="sidebar">
+
+        <h2>📚 Library</h2>
+
+        <a href="settings.html">⚙️ Settings</a>
+
+        <a href="index.html">
+            🏠 Dashboard
+        </a>
+
+        <a href="books.html">
+            📚 Books
+        </a>
+
+        <a href="students.html">
+            👨‍🎓 Students
+        </a>
+
+        <a href="issue.html">
+            📖 Issue / Return
+        </a>
+
+        <button
+            type="button"
+            class="logout-btn"
+            onclick="logout()"
+        >
+            🚪 Logout
+        </button>
+
+    </div>
+
+
+    <!-- ==============================
+         MAIN CONTENT
+    =============================== -->
+
+    <div class="main">
+
+
+        <div class="dashboard-heading">
+
+            <div>
+
+                <h1>
+                    🏠 Library Dashboard
+                </h1>
+
+                <p class="welcome">
+                    Welcome to Library Management System
+                </p>
+
+            </div>
+
+            <div class="admin-badge">
+                👤 Admin
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             STATISTICS CARDS
+        =============================== -->
+
+        <div class="dashboard-cards">
+
+
+            <!-- TOTAL BOOKS -->
+
+            <div class="dashboard-card total-books">
+
+                <div class="dashboard-card-icon">
+                    📚
+                </div>
+
+                <div>
+
+                    <p class="dashboard-card-title">
+                        Total Books
+                    </p>
+
+                    <h2 id="totalBooks">
+                        0
+                    </h2>
+
+                    <span>
+                        Books in library
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- AVAILABLE -->
+
+            <div class="dashboard-card available-books">
+
+                <div class="dashboard-card-icon">
+                    📖
+                </div>
+
+                <div>
+
+                    <p class="dashboard-card-title">
+                        Available Books
+                    </p>
+
+                    <h2 id="availableBooks">
+                        0
+                    </h2>
+
+                    <span>
+                        Ready to issue
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- ISSUED -->
+
+            <div class="dashboard-card issued-books">
+
+                <div class="dashboard-card-icon">
+                    📕
+                </div>
+
+                <div>
+
+                    <p class="dashboard-card-title">
+                        Issued Books
+                    </p>
+
+                    <h2 id="issuedBooks">
+                        0
+                    </h2>
+
+                    <span>
+                        Currently issued
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RETURNED -->
+
+            <div class="dashboard-card returned-books">
+
+                <div class="dashboard-card-icon">
+                    🔄
+                </div>
+
+                <div>
+
+                    <p class="dashboard-card-title">
+                        Returned Books
+                    </p>
+
+                    <h2 id="returnedBooks">
+                        0
+                    </h2>
+
+                    <span>
+                        Successfully returned
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- STUDENTS -->
+
+            <div class="dashboard-card total-students">
+
+                <div class="dashboard-card-icon">
+                    👨‍🎓
+                </div>
+
+                <div>
+
+                    <p class="dashboard-card-title">
+                        Total Students
+                    </p>
+
+                    <h2 id="totalStudents">
+                        0
+                    </h2>
+
+                    <span>
+                        Registered students
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- FINE -->
+
+            <div class="dashboard-card total-fine">
+
+                <div class="dashboard-card-icon">
+                    💰
+                </div>
+
+                <div>
+
+                    <p class="dashboard-card-title">
+                        Total Fine
+                    </p>
+
+                    <h2>
+                        ₹<span id="totalFine">0</span>
+                    </h2>
+
+                    <span>
+                        Total fine amount
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- OVERDUE -->
+
+            <div class="dashboard-card overdue-books">
+
+                <div class="dashboard-card-icon">
+                    🔴
+                </div>
+
+                <div>
+
+                    <p class="dashboard-card-title">
+                        Overdue Books
+                    </p>
+
+                    <h2 id="overdueBooks">
+                        0
+                    </h2>
+
+                    <span>
+                        Need attention
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ==============================
+             RECENT ISSUES
+        =============================== -->
+
+        <div class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        📋 Recent Issues
+                    </h2>
+
+                    <p>
+                        Latest book issue records
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="dashboard-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Student ID
+                            </th>
+
+                            <th>
+                                Book
+                            </th>
+
+                            <th>
+                                Issue Date
+                            </th>
+
+                            <th>
+                                Due Date
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="recentIssuesTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             MOST ISSUED BOOKS
+        =============================== -->
+
+        <div class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        🏆 Most Issued Books
+                    </h2>
+
+                    <p>
+                        Books with the highest issue count
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="dashboard-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Rank
+                            </th>
+
+                            <th>
+                                Book
+                            </th>
+
+                            <th>
+                                Author
+                            </th>
+
+                            <th>
+                                Issue Count
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="mostIssuedBooksTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             QUICK ACTIONS
+        =============================== -->
+
+        <div class="dashboard-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        ⚡ Quick Actions
+                    </h2>
+
+                    <p>
+                        Quickly manage your library
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+
+                <a
+                    href="books.html"
+                    class="quick-action-card"
+                >
+
+                    <div class="quick-action-icon">
+                        📚
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Manage Books
+                        </h3>
+
+                        <p>
+                            Add, edit, search or delete books
+                        </p>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="students.html"
+                    class="quick-action-card"
+                >
+
+                    <div class="quick-action-icon">
+                        👨‍🎓
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Manage Students
+                        </h3>
+
+                        <p>
+                            Add and manage library students
+                        </p>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="issue.html"
+                    class="quick-action-card"
+                >
+
+                    <div class="quick-action-icon">
+                        📖
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Issue / Return
+                        </h3>
+
+                        <p>
+                            Issue books and manage returns
+                        </p>
+
+                    </div>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- ==============================
+             SYSTEM INFO
+        =============================== -->
+
+        <div class="dashboard-info">
+
+            <div>
+
+                <span class="info-icon">
+                    🔐
+                </span>
+
+                <div>
+
+                    <strong>
+                        Secure Admin Dashboard
+                    </strong>
+
+                    <p>
+                        Library APIs are protected with JWT authentication.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <span class="info-icon">
+                    🟢
+                </span>
+
+                <div>
+
+                    <strong>
+                        Library System
+                    </strong>
+
+                    <p>
+                        Manage books, students and issue records from one place.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="js/dashboard.js"></script>
+
+    <script src="js/auth.js"></script>
+
+
+</body>
+
+</html>
