@@ -1,34 +1,37 @@
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+require("dotenv").config();
+
 const authRoutes = require("./routes/authRoutes");
 const dashboardRoutes = require("./routes/dashboardRoutes");
 const issueRoutes = require("./routes/issueRoutes");
 const studentRoutes = require("./routes/studentRoutes");
 const bookRoutes = require("./routes/bookRoutes");
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-require("dotenv").config();
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 
-
 app.use("/api/books", bookRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/students", studentRoutes);
 app.use("/api/issues", issueRoutes);
+
 app.get("/", (req, res) => {
     res.send("Library Management System API is running...");
 });
+
+const PORT = process.env.PORT || 5000;
 
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log("MongoDB Connected Successfully");
 
-        app.listen(5000, () => {
-            console.log("Server running on http://localhost:5000");
+        app.listen(PORT, "0.0.0.0", () => {
+            console.log(`Server running on port ${PORT}`);
         });
     })
     .catch((error) => {
